@@ -28,8 +28,11 @@ picture,
 video,
 svg {
   display: block;
-  max-width: 100%;
   height: auto;
+}
+
+img {
+  vertical-align: top;
 }
 
 input,
@@ -50,6 +53,7 @@ input {
 button {
   cursor: pointer;
   background-color: inherit;
+  border: none;
 }
 
 ol,
