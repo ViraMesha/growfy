@@ -81,6 +81,14 @@ body {
   |==============================
 */
 
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(13, 13, 17, 0.5);
+}
+
 .header__container {
   display: flex;
   column-gap: 32px;
