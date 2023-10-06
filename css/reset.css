@@ -1,0 +1,74 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font: inherit;
+}
+
+html {
+  color-scheme: dark light;
+  font-size: 16px;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-family: sans-serif;
+  line-height: 1;
+}
+
+/*images are responsive by default*/
+img,
+picture,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+textarea,
+button,
+select {
+  font: inherit;
+}
+
+button,
+input {
+  font-weight: inherit;
+  font-size: inherit;
+  color: inherit;
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+  background-color: inherit;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
