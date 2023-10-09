@@ -144,6 +144,31 @@ body {
   align-items: center;
 }
 
+.header-main__list {
+}
+
+.header-main__list li {
+  position: relative;
+  min-height: 32px;
+  padding-left: 40px;
+  padding-top: 8px;
+}
+
+.header-main__list li:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.header-main__list li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  background: rgba(129, 129, 139, 0.1) url("../img/li.svg") center no-repeat;
+}
+
 @media (min-width: 768px) {
   .header-main__title {
     max-width: 520px;
@@ -488,7 +513,7 @@ body {
 
 .main__header::before {
   content: "";
-  background: url(../img/main/decor.svg) 0 0 / 100% no-repeat;
+  background: url(../img/decor.svg) 0 0 / 100% no-repeat;
   width: 122px;
   height: 122px;
   position: absolute;
@@ -758,12 +783,6 @@ body {
   }
 }
 
-@media (max-width: 620px) {
-  .services__items {
-    flex-direction: column;
-  }
-}
-
 @media (max-width: 767.98px) {
   .services {
     padding-top: 30px;
@@ -772,6 +791,86 @@ body {
 
   .services__column:first-child {
     padding-top: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .services__items {
+    flex-direction: column;
+  }
+}
+
+/*
+  |==============================
+  | Why
+  |==============================
+*/
+
+.why {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.why__container {
+  display: flex;
+  column-gap: 64px;
+  row-gap: 32px;
+}
+.why__images {
+}
+.images-why {
+  flex: 0 1 50%;
+  display: flex;
+  position: relative;
+  align-self: flex-end;
+}
+
+.images-why__item {
+  overflow: hidden;
+}
+
+.images-why__item img {
+  max-width: 100%;
+}
+
+.images-why__item_1 {
+  border-radius: 90% 0 50% 50% / 50% 0 30% 30%;
+}
+.images-why__item_2 {
+  border-radius: 50% 50% 50% 0;
+  align-self: flex-end;
+}
+.why__content {
+  flex: 0 1 50%;
+  align-self: center;
+}
+.why__header {
+}
+
+.images-why::before {
+  content: "";
+  background: url(../img/decor.svg) 0 0 / 100% no-repeat;
+  width: 122px;
+  height: 122px;
+  position: absolute;
+  bottom: -15px;
+  left: -31px;
+}
+
+@media (max-width: 991.98px) {
+  .why {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .why {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .why__container {
+    flex-direction: column-reverse;
   }
 }
 
