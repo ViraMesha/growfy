@@ -66,6 +66,9 @@ body {
 .page__testimonials {
 }
 
+.page__blog {
+}
+
 /*----------------------------------*/
 
 .button {
@@ -102,6 +105,10 @@ body {
 }
 
 .header-main {
+}
+
+:where(.testimonials__header, .blog__header) {
+  margin-bottom: 64px;
 }
 
 .header-main__label {
@@ -143,13 +150,22 @@ body {
   gap: 20px;
 }
 
-.header-main__body .header-main__text {
+.header-main__body .header-main__text:not(:last-child) {
   margin-bottom: 0;
 }
 
 .header-main__body .header-main__button {
   align-self: flex-end;
   flex: 0 0 auto;
+}
+
+.header-main__body .header-main__title {
+  max-width: none;
+  margin-bottom: 12px;
+}
+
+.header-main__body .header-main__text {
+  max-width: 740px;
 }
 
 .header-main__text {
@@ -204,6 +220,10 @@ body {
 }
 
 @media (max-width: 991.98px) {
+  :where(.testimonials__header, .blog__header) {
+    margin-bottom: 40px;
+  }
+
   .header-main__title {
     font-size: 44px;
   }
@@ -214,6 +234,10 @@ body {
 }
 
 @media (max-width: 767.98px) {
+  :where(.testimonials__header, .blog__header) {
+    margin-bottom: 30px;
+  }
+
   .header-main__title {
     font-size: 32px;
   }
@@ -1011,19 +1035,6 @@ body {
 .testimonials__container {
 }
 
-.testimonials__header {
-  margin-bottom: 64px;
-}
-
-.testimonials__header .header-main__title {
-  max-width: none;
-  margin-bottom: 12px;
-}
-
-.testimonials__header .header-main__text {
-  max-width: 740px;
-}
-
 .testimonials__items {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1104,10 +1115,6 @@ body {
     padding-top: 50px;
     padding-bottom: 50px;
   }
-
-  .testimonials__header {
-    margin-bottom: 40px;
-  }
 }
 
 @media (max-width: 767.98px) {
@@ -1116,12 +1123,151 @@ body {
     padding-bottom: 30px;
   }
 
-  .testimonials__header {
-    margin-bottom: 30px;
-  }
-
   .item-testimonial {
     padding: 30px 15px;
+  }
+}
+
+/*
+  |==============================
+  | Blog
+  |==============================
+*/
+
+.blog {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.blog__container {
+}
+.blog__header {
+}
+
+.blog__items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+.blog__item {
+  border-radius: 24px;
+  background-color: rgba(129, 129, 139, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 100%;
+}
+.item-blog {
+}
+.item-blog__header {
+  position: relative;
+}
+.item-blog__category {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  border-radius: 0px 10px 0px 0px;
+  background-color: rgba(129, 129, 139, 0.5);
+  padding: 10px;
+
+  color: var(--secondary-text-color);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.item-blog__image {
+  position: relative;
+  display: block;
+  padding-bottom: 49%;
+}
+
+.item-blog__image img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.item-blog__body {
+  padding: 26px 30px 40px 26px;
+}
+.item-blog__date {
+  color: rgba(129, 129, 139, 0.9);
+}
+
+.item-blog__date:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.item-blog__title {
+  color: var(--secondary-text-color);
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.4; /* 140% */
+}
+
+.item-blog__title:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.item-blog__title:hover {
+  text-decoration: underline;
+}
+
+.item-blog__link-title {
+}
+.item-blog__text {
+}
+
+.item-blog__text:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.item-blog__link {
+  color: var(--blue-color);
+  font-size: 14px;
+  line-height: 1.6; /* 160% */
+}
+
+.item-blog__link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1100px) {
+  .blog__items {
+    gap: 20px;
+  }
+
+  .item-blog__body {
+    padding: 25px 15px;
+  }
+
+  .item-blog__title:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .blog {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .item-blog__body {
+    padding: 20px 12px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .blog {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .blog__items {
+    grid-template-columns: auto;
   }
 }
 
