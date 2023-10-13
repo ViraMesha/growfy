@@ -69,6 +69,16 @@ body {
 .page__blog {
 }
 
+.page__subscription {
+  margin-bottom: 100px;
+}
+
+@media (max-width: 991.98px) {
+  .page__subscription {
+    margin-bottom: 50px;
+  }
+}
+
 /*----------------------------------*/
 
 .button {
@@ -1136,7 +1146,7 @@ body {
 
 .blog {
   padding-top: 100px;
-  padding-bottom: 100px;
+  padding-bottom: 200px;
 }
 .blog__container {
 }
@@ -1252,7 +1262,7 @@ body {
 @media (max-width: 991.98px) {
   .blog {
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 100px;
   }
 
   .item-blog__body {
@@ -1263,11 +1273,92 @@ body {
 @media (max-width: 767.98px) {
   .blog {
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 50px;
   }
 
   .blog__items {
     grid-template-columns: auto;
+  }
+}
+
+/*
+  |==============================
+  | Subscription
+  |==============================
+*/
+
+.subscription {
+}
+.subscription__container {
+}
+
+.subscription__body {
+  display: flex;
+  align-items: center;
+
+  border-radius: 30px;
+  background-color: rgba(129, 129, 139, 0.1);
+  padding: 52px 40px;
+}
+
+.subscription__column {
+  flex: 0 1 50%;
+  text-align: center;
+}
+
+.subscription__title {
+  color: var(--secondary-text-color);
+  text-align: center;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.4; /* 140% */
+}
+
+.subscription__title:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.subscription__text {
+  line-height: 1.5; /* 150% */
+  max-width: 302px;
+  display: inline-block;
+}
+.subscription__actions {
+  display: flex;
+  column-gap: 32px;
+  row-gap: 20px;
+  justify-content: center;
+}
+.subscription__button {
+}
+.button {
+}
+.button_dark {
+}
+
+@media (max-width: 991.98px) {
+  .subscription__body {
+    padding: 25px 15px;
+  }
+}
+
+@media (max-width: 850px) {
+  .subscription__body {
+    align-items: stretch;
+    flex-direction: column;
+    row-gap: 30px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .subscription__title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 499.98px) {
+  .subscription__actions {
+    flex-direction: column;
   }
 }
 
