@@ -23,3 +23,43 @@ const copy2 = items.cloneNode(true);
 
 slide.appendChild(copy1);
 slide.appendChild(copy2);
+
+/*
+  |==============================
+  | Number Counting
+  |==============================
+*/
+
+const counters = document.querySelectorAll(".advantages__value");
+
+counters.forEach((valueDisplay) => {
+  let startValue = 0;
+  const endValue = parseInt(valueDisplay.getAttribute("data-count"));
+  const counting = setInterval(updateCounting, 1);
+
+  function updateCounting() {
+    if (startValue < 1000) {
+      startValue += 1;
+      if (endValue === 10) {
+        valueDisplay.innerText = startValue + "+";
+      } else if (endValue === 98) {
+        valueDisplay.innerText = startValue + "%";
+      } else {
+        valueDisplay.innerText = startValue;
+      }
+    }
+
+    if (startValue >= 1000) {
+      startValue += 100;
+      if (endValue === 12000) {
+        valueDisplay.innerText = startValue / 10000 + "M+";
+      } else if (endValue === 34000) {
+        valueDisplay.innerText = startValue / 10000 + "B";
+      }
+    }
+
+    if (startValue >= endValue) {
+      clearInterval(counting);
+    }
+  }
+});
